@@ -2,6 +2,7 @@ package com.dbbyte.repository;
 
 
 import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -22,4 +23,6 @@ public interface BookRepository extends PagingAndSortingRepository<Book, Long> {
     public List<Book> findByTitleContaining(@Param("title") String title); 
    
     public int countByAuthor(@Param("author") String author);
+
+	public List<Book> findByTitleAndAuthor(String title, String author);
 } 
