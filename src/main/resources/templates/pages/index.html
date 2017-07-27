@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="template-home::head-home">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav th:replace="template-home::nav-home">
+    </nav>
+
+    <header th:replace="template-home::header-home">
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h1 class="my-4">Welcome to Modern Business</h1>
+
+        <!-- Features Section -->
+        <div th:replace="template-home::features">
+        </div>
+        <!-- /.row -->
+
+        <hr />
+
+        <!-- Call to Action Section -->
+        <div th:replace="template-home::call-to-action">
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <div th:replace="template-home::footer"></div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <div th:replace="template-home::footer-js"></div>
+
+</body>
+
+</html>

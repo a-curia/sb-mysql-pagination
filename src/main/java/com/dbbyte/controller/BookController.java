@@ -1,7 +1,5 @@
 package com.dbbyte.controller;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +15,6 @@ import com.dbbyte.domain.Book;
 import com.dbbyte.repository.BookRepository;
 
 @Controller
-@RequestMapping(value="/show")
 public class BookController {
 	
 	@Autowired
@@ -32,7 +29,7 @@ public class BookController {
 		model.addAttribute("books", page.getContent());
 	
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("result");
+		modelAndView.setViewName("pages/books");
 		
 		return modelAndView;
 	}
@@ -45,7 +42,7 @@ public class BookController {
 		model.addAttribute("books", bookRepository.findByTitleContaining(title));
 		
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("result");
+		modelAndView.setViewName("pages/books");
 		
 		return modelAndView;
 	}
@@ -57,7 +54,7 @@ public class BookController {
 		model.addAttribute("books", bookRepository.findByTitleAndAuthor(title,author));
 		
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("result");
+		modelAndView.setViewName("pages/books");
 		
 		return modelAndView;
 	}	
