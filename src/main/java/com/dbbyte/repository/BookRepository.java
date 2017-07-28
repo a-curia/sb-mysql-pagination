@@ -25,4 +25,6 @@ public interface BookRepository extends PagingAndSortingRepository<Book, Long> {
     public int countByAuthor(@Param("author") String author);
 
 	public List<Book> findByTitleAndAuthor(String title, String author);
+
+	 public List<Book> findByTitle(@Param("title") String title);
 } 
